@@ -9,8 +9,25 @@ import Lang from './layout/Header/lang';
 
 class App extends Component {
   render() {
+
+      const menu = [{
+
+          link: 'http://facebook.com',
+          name: 'Facebook',
+      },
+      {
+
+          link: 'http://instagram.com',
+          name: 'Instagram',
+      }
+      ];
+
       return (<div className="App">
-          <Header />
+
+          <Header
+
+          siteName = {menu}
+          />
           <Menu />
           <Lang />
           <Content />
