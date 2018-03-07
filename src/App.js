@@ -8,35 +8,38 @@ import Lang from './layout/Header/lang';
 
 
 class App extends Component {
+
+    constructor(props){
+        super (props);
+
+        this.state = {
+            open: false,
+        };
+
+    }
   render() {
 
-      const menu = [{
 
-          link: 'http://facebook.com',
-          name: 'Facebook',
-      },
-      {
+      return <div className="App">
 
-          link: 'http://instagram.com',
-          name: 'Instagram',
-      }
-      ];
+          <Header/>
 
-      return (<div className="App">
+          <button onClick={() => this.setState({ open: !this.state.open})}>Tooggle open</button>
 
-          <Header
-
-          siteName = {menu}
-          />
-          <Menu />
-          <Lang />
-          <Content />
-          <Footer />
+          {this.state.open
+              ? <Content/>
+              : 'No content'
+          }
+              <Footer />
+              <Menu />
+              <Lang />
 
 
 
-      </div>);
-  }
+              </div>;
 }
 
-export default App;
+          }
+
+          export default App;
+
