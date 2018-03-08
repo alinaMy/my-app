@@ -14,6 +14,8 @@ class App extends Component {
 
         this.state = {
             open: false,
+            name: 'John',
+            cnt: 0,
         };
 
     }
@@ -22,9 +24,19 @@ class App extends Component {
 
       return <div className="App">
 
-          <Header/>
+          {this.state.name}
+          {this.state.cnt}
 
-          <button onClick={() => this.setState({ open: !this.state.open})}>Tooggle open</button>
+          <Header
+          lang = {this.state.open ? 'open' : 'closed'}
+          />
+
+
+          <button onClick={() => this.setState({
+              open: !this.state.open,
+              name: `${this.state.name}.`,
+              cnt: this.state.cnt + 1
+          })}>Tooggle open</button>
 
           {this.state.open
               ? <Content/>

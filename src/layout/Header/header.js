@@ -7,7 +7,7 @@ class header extends Component {
     return (
       <div>
           -Header-
-
+          <span className = "home" >{this.props.lang}</span>
       </div>
     );
   }
